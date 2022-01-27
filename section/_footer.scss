@@ -1,0 +1,23 @@
+// フッター
+footer {
+    background-color: $sRed;
+    padding: 20px 30px;
+  
+    .footer--total {
+      font-size: 15px;
+      .footer-menu {
+        margin-bottom: 5px;
+  
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    .name {
+      text-align: center;
+      color: white;
+      margin-bottom: 0;
+    }
+  }
+  
+  

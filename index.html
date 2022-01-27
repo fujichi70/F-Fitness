@@ -8,7 +8,6 @@
 	<title>F Fitness</title>
 	<link rel="icon" type="image/png" href="img/favicon.png">
 	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-	<link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -29,7 +28,7 @@
 		</div>
 	</div>
 
-	<header>
+	<header id="header">
 		<div class="sp-menu">
 			<div class="container">
 				<button class="btn">
@@ -59,15 +58,15 @@
 					<li class="pc-menu--select">
 						<a class="pc-menu--text" href="#">ホーム</a>
 						<ul class="pc-menu--second">
-							<li><a href="#info">お知らせ</a></li>
+							<li class="pc-menu--second-text"><a href="#info">お知らせ</a></li>
 						</ul>
 					</li>
 					<li class="pc-menu--select"><a href="#fee">料金</a></li>
 					<li class="pc-menu--select">
 						<a class="pc-menu--text" href="#">施設・インストラクター</a>
 						<ul class="pc-menu--second">
-							<li class="second-text"><a href="facility.html">施設紹介</a></li>
-							<li class="second-text"><a href="trainer.html">インストラクター紹介</a></li>
+							<li class="pc-menu--second-text"><a href="facility.html">施設紹介</a></li>
+							<li class="pc-menu--second-text"><a href="trainer.html">インストラクター紹介</a></li>
 						</ul>
 					</li>
 					<li class="pc-menu--select"><a href="blog.html">ブログ</a></li>
@@ -87,7 +86,7 @@
 				<div id="carousel--next" class="carousel--next"><i class="fas fa-chevron-right fa-3x"></i></div>
 			</div>
 		</div>
-		<h1 id="js-new-me" class="new-me">NEW ME.</h1>
+		<h1 id="js-new-me" class="new-me"></h1>
 		<div id='carousel--text' class="carousel--text">
 			<h1 id="js-main-message" class="main-message"></h1>
 			<h2 id="js-sub-message" class="sub-message"></h2>
@@ -330,12 +329,20 @@
 
 		<aside>
 			<section id="experience">
-				<div class="experience--info">
-					<h1>ひとりで悩んでいるあなたへ</h1>
-					<h2>二人三脚で頑張りませんか？</h2>
+				<div class="experience--parts">
+					<div class="experience--info">
+						<div class="img-box">
+							<h1 class="experience--title">二人三脚で頑張りませんか？</h1>
+							<img class="experience--img" src="img/stylish.jpg" alt="克服した女性の画像">
+						</div>
+						<div class="img-box">
+							<h1 class="experience--title">ひとりで悩んでいるあなたへ</h1>
+							<img class="experience--img" src="img/nonstylish.jpg" alt="悩んでいる女性の画像">
+						</div>
+					</div>
 				</div>
-				<p>お身体のお悩みやアドバイスいつでもなんでも聞けちゃいます！</p>
-				<p>体験受付中！今ならキャンペーン中でお安くサポートさせていただきます♪</p>
+				<p class="experience--message1">お身体のお悩みやアドバイスいつでもなんでも聞けちゃいます！</p>
+				<p class="experience--message2">体験受付中！今ならキャンペーン中でお安くサポートさせていただきます♪</p>
 			</section>
 
 			<section id="location">
@@ -354,7 +361,7 @@
 				<div class="location-map">
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.60744581524415!2d139.7032586969147!3d35.65929097881826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b58425587bd%3A0xc6b8afa73cd2de92!2z44CSMTUwLTAwMDIg5p2x5Lqs6YO95riL6LC35Yy65riL6LC377yS5LiB55uu77yS77yQ4oiS77yR77yS!5e0!3m2!1sja!2sjp!4v1642855819970!5m2!1sja!2sjp"
-						width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 				</div>
 			</section>
 
@@ -362,9 +369,7 @@
 				<div class="sns-contents">
 					<div class="sns-box">
 						<h3 class="sns--title">Facebook</h3>
-						<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=315&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-					</div>
-				</div>
+						<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D105485768711934%26id%3D100077515332905&width=750&show_text=true&height=506&appId" width="750" height="506" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>				</div>
 				<div class="sns-contents">
 					<div class="sns-box">
 						<h3 class="sns--title">Twitter</h3>
