@@ -3,7 +3,7 @@
 {
   const carouselParts = [
     {
-      newMe: 'NEW ME.',
+      text: 'NEW ME.',
       message1: "入会応援キャンペーン！",
       message2: "今なら入会金、月会費２か月分無料♪",
       message3:
@@ -11,14 +11,14 @@
       image: "img/main/main_m.jpg",
     },
     {
-      newMe: 'NEW ME.',
+      text: 'NEW ME.',
       message1: "オンラインヨガ始めました♪",
       message2: "月2000円で始めませんか？",
       message3: "お試し期間なんと3か月！代金はもちろん無料！",
       image: "img/main/remote_m.jpg",
     },
     {
-      newMe: 'NEW ME.',
+      text: 'NEW ME.',
       message1: "感染対策しっかり実施中",
       message2: "器具等のアルコール除菌の徹底を行っております",
       message3:
@@ -38,39 +38,39 @@
   let currentIndex = 0;
   let timeOutId;
   let target;
-
-  const chars = carouselParts[currentIndex].newMe.trim().split("");
-  const charsSplit = chars.map((val) => {
-    if (val === " ") {
-      val = val.replace(" ", "&nbsp;");
-      return `<span>${val}</span>`;
-    } else {
-      return `<span>${val}</span>`;
-    }
-  });
-
-  const charsJoin = charsSplit.join("");
   
-  newMe.innerHTML = charsJoin;
-
+  
   mainImage.src = carouselParts[currentIndex].image;
-  newMe.innerHTML = carouselParts[currentIndex].newMe;
   document.addEventListener("DOMContentLoaded", () => {
     autoPlay();
     createThumbnailItem();
     nextElement();
     prevBtn();
     nextBtn();
+    charsAnimation();
   });
 
   function charsAnimation() {
+	let chars = carouselParts[currentIndex].text.trim().split("");
+	let charsSplit = chars.map((val) => {
+	  if (val === " ") {
+		val = val.replace(" ", "&nbsp;");
+		return `<span>${val}</span>`;
+	  } else {
+		return `<span>${val}</span>`;
+	  }
+	});
+  
+	const charsJoin = charsSplit.join("");
+	newMe.innerHTML = charsJoin;
+  
     Array.from(newMe.children).forEach((e, index) => {
       setTimeout(() => {
         e.classList.add("move");
       }, 100 * index);
     });
   }
-  
+
   function nextElement() {
     mainMessage.textContent = carouselParts[currentIndex].message1;
     subMessage.textContent = carouselParts[currentIndex].message2;
@@ -90,6 +90,7 @@
         target = carouselParts.length - 1;
       }
       nextImage();
+	  charsAnimation();
     });
   }
 
@@ -101,18 +102,19 @@
         target = 0;
       }
       nextImage();
+	  charsAnimation();
     });
   }
 
   function autoPlay() {
     stopAutoPlay();
     timeOutId = setInterval(() => {
-      target = currentIndex + 1;
-      if (target === carouselParts.length) {
-        target = 0;
-      }
-      nextImage();
-	  charsAnimation();
+		target = currentIndex + 1;
+		if (target === carouselParts.length) {
+			target = 0;
+		}
+		nextImage();
+		charsAnimation();
     }, 10000);
   }
 
@@ -135,7 +137,7 @@
 
         mainImage.classList.add("active");
         setTimeout(() => {
-          mainImage.classList.remove("active");
+			mainImage.classList.remove("active");
         }, 800);
 
         const thumbnails = document.querySelectorAll(

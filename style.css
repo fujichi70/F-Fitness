@@ -259,6 +259,14 @@ section .content .info--en {
   position: relative;
 }
 
+#header .pc-menu .pc-menu--select:nth-child(2):hover {
+  background-color: #e00000;
+}
+
+#header .pc-menu .pc-menu--select:nth-child(4):hover {
+  background-color: #e00000;
+}
+
 #header .pc-menu .pc-menu--select .pc-menu--second {
   width: 90%;
   background-color: #fb5252;
@@ -399,43 +407,23 @@ section .content .info--en {
   left: 3%;
   color: white;
   font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-  font-size: 120px;
-  -webkit-animation: text-appear forwards;
-          animation: text-appear forwards;
+  font-size: 6rem;
   white-space: nowrap;
 }
 
 #carousel .new-me span {
   display: inline-block;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s .5s;
+  transition: all 1s .5s;
   opacity: 0;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
 }
 
 #carousel .new-me .move {
   opacity: 1;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-}
-
-@-webkit-keyframes text-appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes text-appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 #carousel .carousel--text {
@@ -536,7 +524,8 @@ section .content .info--en {
 }
 
 #info .accordion .text {
-  color: #777676;
+  color: black;
+  font-size: 17px;
 }
 
 #info .accordion .table {
@@ -939,40 +928,15 @@ section .content .info--en {
           transform: translateX(0);
 }
 
-footer {
-  background-color: #fb5252;
-  padding: 20px 30px;
-}
-
-footer .footer--total {
-  font-size: 15px;
-}
-
-footer .footer--total .footer-menu {
-  margin-bottom: 5px;
-}
-
-footer .footer--total .footer-menu:hover {
-  opacity: 0.8;
-}
-
-footer .name {
-  text-align: center;
-  color: white;
-  margin-bottom: 0;
-}
-
 #experience {
   margin: 0 10px 40px;
 }
 
 #experience .experience--parts {
-  margin: 0 20px;
+  margin: 0 0 30px;
 }
 
 #experience .experience--parts .experience--info {
-  background-color: black;
-  opacity: 0.7;
   position: relative;
   visibility: visible;
   position: relative;
@@ -980,19 +944,51 @@ footer .name {
   height: 400px;
 }
 
+#experience .experience--parts .experience--info::before {
+  content: "";
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.637);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 415px;
+  display: block;
+}
+
+#experience .experience--parts .experience--info:hover::before {
+  display: none;
+}
+
 #experience .experience--parts .experience--info:hover .img-box:nth-child(2) {
   display: none;
 }
 
-#experience .experience--parts .experience--info .img-box .experience--title {
+#experience .experience--parts .experience--info:hover .img-box .experience--title1 {
+  opacity: 1;
+}
+
+#experience .experience--parts .experience--info .img-box .experience--title1 {
   color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  z-index: 2;
+  opacity: 0;
+  text-align: center;
+}
+
+#experience .experience--parts .experience--info .img-box .experience--title2 {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
 }
 
 #experience .experience--parts .experience--info .img-box .experience--img {
@@ -1001,45 +997,14 @@ footer .name {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-#experience .experience--parts .experience--info .experience--title1 {
-  color: white;
-  font-size: 28px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-#experience .experience--parts .experience--info .experience--title1:hover {
-  opacity: 0;
-  visibility: visible;
-}
-
-#experience .experience--parts .experience--info .experience--title2 {
-  background: url(img/1635540_s.jpg) center center/cover;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  opacity: 0;
-  font-size: 28px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  color: #fff;
-}
-
-#experience .experience--parts .experience--info .experience--title2:hover {
-  opacity: 1;
+#experience .experience--message {
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0 auto;
 }
 
 #location {
@@ -1097,6 +1062,29 @@ footer .name {
   width: 100%;
 }
 
+footer {
+  background-color: #fb5252;
+  padding: 20px 30px;
+}
+
+footer .footer--total {
+  font-size: 15px;
+}
+
+footer .footer--total .footer-menu {
+  margin-bottom: 5px;
+}
+
+footer .footer--total .footer-menu:hover {
+  opacity: 0.8;
+}
+
+footer .name {
+  text-align: center;
+  color: white;
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 1100px) {
   .contents {
     -webkit-box-orient: vertical;
@@ -1110,6 +1098,9 @@ footer .name {
   }
   aside {
     width: 100%;
+  }
+  .content {
+    padding-top: 5px;
   }
   #header .header-pc-menu {
     margin-bottom: 20px;

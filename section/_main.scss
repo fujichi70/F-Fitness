@@ -83,28 +83,18 @@
     color: white;
     font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝",
       "Yu Mincho", "游明朝体", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-    font-size: 120px;
-    animation: text-appear forwards;
+    font-size: 6rem;
     white-space: nowrap;
 
     span {
       display: inline-block;
-      transition: 1s;
+      transition: all 1s .5s;
       opacity: 0;
-      transform: translateY(0);
+      transform: translateY(-30%);
     }
     .move {
       opacity: 1;
-      transform: translateY(20%);
-    }
-  }
-
-  @keyframes text-appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
+      transform: translateY(0);
     }
   }
 
