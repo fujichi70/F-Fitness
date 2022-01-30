@@ -40,9 +40,12 @@
         width: 100%;
     }
 
-    .content {
-        padding-top: 5px;
+    #fee {
+        .fee-list {
+            margin: 0 auto;
+        }
     }
+
 
     // ヘッダー
     #header {
@@ -86,14 +89,21 @@
             width: 100%;
 
             .main-message {
-                font-size: 20px;
+                font-size: 24px;
             }
             .sub-message {
                 font-size: 18px;
             }
             .detail-message {
-                font-size: 18px;
+                font-size: 15px;
             }
+        }
+    }
+
+    // 料金
+    #fee {
+        .fee-list {
+            margin: 0 auto;
         }
     }
 
@@ -205,6 +215,7 @@
 
             .mobile-menu {
                 opacity: 1;
+                overflow: hidden;
                 
                 .mobile-menu--item {
                     visibility: visible;
@@ -276,8 +287,16 @@
             grid-template-columns: auto;
         }
 
+        .item {
+            height: 80%;
+
+        }
+        .service-item--img {
+            width: 20%;
+        }
+
         .service-item--text {
-            font-size: 20px;
+            font-size: 17px;
         }
     }
 
@@ -314,15 +333,26 @@
     }
 
     #experience {
+        margin: 50px 0;
         .experience--title1,
         .experience--title2 {
             font-size: 40px;
         }
+        .experience--message {
+            font-size: 20px;
+        }
     }
 
     #location {
+        margin-bottom: 50px;
         .location--title {
             margin-right: 20px;
+        }
+    }
+
+    #sns {
+        .sns-box {
+            margin-bottom: 50px;
         }
     }
 }

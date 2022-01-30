@@ -7,7 +7,8 @@
             position: relative;
             visibility: visible;
             position: relative;
-            max-width: 100%;
+            max-width: 645px;
+            margin: auto;
             height: 400px;
 
             &::before {
@@ -84,7 +85,7 @@
     }
 
     .experience--message {
-        font-size: 20px;
+        font-size: 15px;
         line-height: 22px;
         margin: 0 auto;
     }

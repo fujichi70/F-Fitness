@@ -8,7 +8,7 @@ body {
   height: auto;
   margin: 0;
   padding: 0;
-  font-family: "Kiwi Maru", serif;
+  font-family: 'Zen Old Mincho', serif;
   background: linear-gradient(-45deg, #fb463d42, #fb8c3d4d, #fdac1546);
   background-size: 2000% 2000%;
   -webkit-animation: gradation 10s ease infinite alternate;
@@ -454,13 +454,17 @@ section .content .info--menu {
   color: white;
 }
 
+#carousel .carousel--text .main-message {
+  margin-bottom: 10px;
+}
+
 #carousel .carousel--text .sub-message {
-  font-size: 25px;
+  font-size: 22px;
   margin-bottom: 15px;
 }
 
 #carousel .carousel--text .detail-message {
-  font-size: 20px;
+  font-size: 19px;
 }
 
 @-webkit-keyframes change-color {
@@ -700,11 +704,15 @@ section .content .info--menu {
   position: relative;
 }
 
-#service .service-top .service-img {
+#service .item {
+  height: 80%;
+}
+
+#service .service-img {
   width: 80%;
 }
 
-#service .service-top .service-text {
+#service .service-text {
   width: 50%;
   text-align: start;
   color: white;
@@ -743,7 +751,7 @@ section .content .info--menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 260px;
+  height: 250px;
   vertical-align: middle;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
@@ -953,7 +961,8 @@ section .content .info--menu {
   position: relative;
   visibility: visible;
   position: relative;
-  max-width: 100%;
+  max-width: 645px;
+  margin: auto;
   height: 400px;
 }
 
@@ -1044,7 +1053,7 @@ section .content .info--menu {
 }
 
 #experience .experience--message {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 22px;
   margin: 0 auto;
 }
@@ -1197,8 +1206,8 @@ footer .name {
   aside {
     width: 100%;
   }
-  .content {
-    padding-top: 5px;
+  #fee .fee-list {
+    margin: 0 auto;
   }
   #header .header-pc-menu {
     margin-bottom: 20px;
@@ -1241,13 +1250,16 @@ footer .name {
     width: 100%;
   }
   #carousel .carousel--text .main-message {
-    font-size: 20px;
+    font-size: 24px;
   }
   #carousel .carousel--text .sub-message {
     font-size: 18px;
   }
   #carousel .carousel--text .detail-message {
-    font-size: 18px;
+    font-size: 15px;
+  }
+  #fee .fee-list {
+    margin: 0 auto;
   }
   #sns .sns-box {
     margin-bottom: 30px;
@@ -1352,6 +1364,7 @@ footer .name {
   }
   #header .menu-open .mobile-menu {
     opacity: 1;
+    overflow: hidden;
   }
   #header .menu-open .mobile-menu .mobile-menu--item {
     visibility: visible;
@@ -1424,8 +1437,14 @@ footer .name {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
+  #service .item {
+    height: 80%;
+  }
+  #service .service-item--img {
+    width: 20%;
+  }
   #service .service-item--text {
-    font-size: 20px;
+    font-size: 17px;
   }
   #instructor {
     margin-bottom: 30px;
@@ -1464,12 +1483,24 @@ footer .name {
   #instructor .instructor-list .instructor-right--message {
     margin: 0 auto;
   }
+  #experience {
+    margin: 50px 0;
+  }
   #experience .experience--title1,
   #experience .experience--title2 {
     font-size: 40px;
   }
+  #experience .experience--message {
+    font-size: 20px;
+  }
+  #location {
+    margin-bottom: 50px;
+  }
   #location .location--title {
     margin-right: 20px;
+  }
+  #sns .sns-box {
+    margin-bottom: 50px;
   }
 }
 /*# sourceMappingURL=style.css.map */

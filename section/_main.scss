@@ -110,12 +110,17 @@
         background-color: rgba(255, 0, 0, 0.493);
         color: white;
 
+        .main-message {
+            margin-bottom: 10px;
+            
+        }
+
         .sub-message {
-            font-size: 25px;
+            font-size: 22px;
             margin-bottom: 15px;
         }
         .detail-message {
-            font-size: 20px;
+            font-size: 19px;
         }
     }
 
