@@ -23,15 +23,15 @@
 <body>
 
 	<div class="opening">
-		<div class="title">
-			<img src="img/logo_w.png" alt="ロゴ">
+		<div class="opening--title">
+			<img class="opening--img" src="img/logo_w.png" alt="ロゴ">
 		</div>
 	</div>
 
 	<header id="header">
 		<div class="sp-menu">
 			<div class="container">
-				<button class="btn">
+				<button class="sp-menu--btn">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -43,14 +43,14 @@
 					<li class="mobile-menu--item"><a href="#fee">料金</a></li>
 					<li class="mobile-menu--item"><a href="#service">サービス・施設</a></li>
 					<li class="mobile-menu--item"><a href="#instructor">インストラクター紹介</a></li>
-					<li class="mobile-menu--item"><a href="aside">アクセス・SNS</a></li>
+					<li class="mobile-menu--item"><a href="#location">アクセス・SNS</a></li>
 				</ul>
 			</nav>
 		</div>
 
 		<div class="flex header-pc-menu">
-			<div class="logo"><img src="img/logo.png" alt=""></div>
-			<a class="reserve" href="#">体験予約を申し込む</a>
+			<div class="logo"><img src="img/logo.png" alt="ロゴ"></div>
+			<a class="header--reserve" href="#">体験予約を申し込む</a>
 		</div>
 		<div class="pc-menu">
 			<nav class="pc-menu--total">
@@ -63,13 +63,13 @@
 					</li>
 					<li class="pc-menu--select"><a href="#fee">料金</a></li>
 					<li class="pc-menu--select">
-						<a class="pc-menu--text" href="#">設備・インストラクター</a>
+						<a class="pc-menu--text" href="#service">設備・インストラクター</a>
 						<ul class="pc-menu--second">
 							<li class="pc-menu--second-text"><a href="#service">サービス・施設</a></li>
 							<li class="pc-menu--second-text"><a href="#instructor">インストラクター紹介</a></li>
 						</ul>
 					</li>
-					<li class="pc-menu--select"><a href="blog.html">アクセス・SNS</a></li>
+					<li class="pc-menu--select"><a href="#location">アクセス・SNS</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -77,21 +77,23 @@
 	</header>
 
 
-	<main id="carousel" class="carousel">
-		<div class="carousel--list">
-			<div class="carousel--main"><img class="carousel--img" id="carousel--main"></div>
-			<div class="carousel--parts">
-				<div id="carousel--prev" class="carousel--prev"><i class="fas fa-chevron-left fa-3x"></i></div>
-				<ul class="carousel--thumbnails"></ul>
-				<div id="carousel--next" class="carousel--next"><i class="fas fa-chevron-right fa-3x"></i></div>
+	<main>
+		<section id="carousel" class="carousel">
+			<div class="carousel--list">
+				<div class="carousel--main"><img class="carousel--img" id="carousel--main"></div>
+				<div class="carousel--parts">
+					<div id="carousel--prev" class="carousel--prev"><i class="fas fa-chevron-left fa-3x"></i></div>
+					<ul class="carousel--thumbnails"></ul>
+					<div id="carousel--next" class="carousel--next"><i class="fas fa-chevron-right fa-3x"></i></div>
+				</div>
 			</div>
-		</div>
-		<div id="js-new-me" class="new-me"></div>
-		<div id='carousel--text' class="carousel--text">
-			<h1 id="js-main-message" class="main-message"></h1>
-			<h2 id="js-sub-message" class="sub-message"></h2>
-			<p id="js-detail-message" class="detail-message"></p>
-		</div>
+			<div id="js-new-me" class="new-me"></div>
+			<div id='carousel--text' class="carousel--text">
+				<h1 id="js-main-message" class="main-message"></h1>
+				<h2 id="js-sub-message" class="sub-message"></h2>
+				<p id="js-detail-message" class="detail-message"></p>
+			</div>
+		</section>
 	</main>
 
 	<section id="scroll">
@@ -109,10 +111,10 @@
 				<div class="content">
 					<div class="flex">
 						<i class="fas fa-dumbbell"></i>
-						<h2 class="info--menu">お知らせ</h2>
+						<h2 class="info--en">information</h2>
 						<i class="fas fa-dumbbell"></i>
 					</div>
-					<p class="info--en">information</p>
+					<p class="info--menu">-お知らせ-</p>
 				</div>
 
 				<div class="accordion" id="accordionExample">
@@ -126,8 +128,7 @@
 						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
 							data-bs-parent="#accordionExample">
 							<div class="accordion-body">
-								<p class="text">F
-									Fitnessでは、インストラクターをはじめ、店舗内の消毒・喚起を随時行っております。また、密にならないよう人数制限を設けており安全対策を徹底しておりますのでご安心ください。
+								<p class="accordion-text">F Fitnessでは、インストラクターをはじめ、店舗内の消毒・喚起を随時行っております。また、密にならないよう人数制限を設けており安全対策を徹底しておりますのでご安心ください。
 								</p>
 							</div>
 						</div>
@@ -142,7 +143,7 @@
 						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
 							data-bs-parent="#accordionExample">
 							<div class="accordion-body">
-								<p class="text">日頃からF Fitnessをご利用いただき、ありがとうございます。<br>
+								<p class="accordion-text">日頃からF Fitnessをご利用いただき、ありがとうございます。<br>
 									年末年始の営業日時のご案内については、以下のとおりとなっておりますので、<br>
 									お間違えのないようにご来店くださいますようお願いいたします。</p>
 								<table class="table">
@@ -169,26 +170,13 @@
 						<h2 class="accordion-header" id="headingThree">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
 								data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-
+								低糖質レシピアドバイス開始！
 							</button>
 						</h2>
 						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
 							data-bs-parent="#accordionExample">
 							<div class="accordion-body">
-								<strong>This is the third item's accordion body.</strong> It is hidden by default, until
-								the
-								collapse plugin
-								adds the appropriate classes that we use to style each element. These classes control
-								the
-								overall
-								appearance, as well as the showing and hiding via CSS transitions. You can modify any of
-								this
-								with custom
-								CSS or overriding our default variables. It's also worth noting that just about any HTML
-								can
-								go
-								within the
-								<code>.accordion-body</code>, though the transition does limit overflow.
+								<p class="accordion-text">今月から食事管理もご希望のお客様に低糖質のレシピをお渡しいたします！1週間ごとですので飽きずに栄養を摂りながら楽しくダイエット♪ご希望の方は特別に初回無料！1か月後も月500円なのでお得です♪</p>
 							</div>
 						</div>
 					</div>
@@ -199,10 +187,10 @@
 				<div class="content">
 					<div class="flex">
 						<i class="fas fa-dumbbell"></i>
-						<h2 class="info--menu">料金</h2>
+						<h2 class="info--en">fee</h2>
 						<i class="fas fa-dumbbell"></i>
 					</div>
-					<p class="info--en">fee</p>
+					<p class="info--menu">-料金-</p>
 				</div>
 
 				<table class="fee-list">
@@ -232,10 +220,10 @@
 				<div class="content">
 					<div class="flex">
 						<i class="fas fa-dumbbell"></i>
-						<h2 class="info--menu">サービス・設備</h2>
+						<h2 class="info--en">service & equipment</>
 						<i class="fas fa-dumbbell"></i>
 					</div>
-					<p class="info--en">service & equipment</p>
+					<p class="info--menu">-サービス・設備-</p>
 				</div>
 
 				<div class="service-top">
@@ -299,10 +287,10 @@
 				<div class="content">
 					<div class="flex">
 						<i class="fas fa-dumbbell"></i>
-						<h2 class="info--menu">インストラクター紹介</h2>
+						<h2 class="info--en">instructor</h2>
 						<i class="fas fa-dumbbell"></i>
 					</div>
-					<p class="info--en">trainers</p>
+					<p class="info--menu">-インストラクター紹介-</p>
 				</div>
 
 				<div class="instructor-list">
@@ -343,6 +331,7 @@
 				</div>
 				<p class="experience--message">お身体のお悩みやアドバイスいつでもなんでも聞けちゃいます！</p>
 				<p class="experience--message">体験受付中！今ならキャンペーン中でお安くサポートさせていただきます♪</p>
+				<p class="experience--message experience--animation">入会金、事務手数料、月会費２か月分が無料！</p>
 			</section>
 
 			<section id="location">
@@ -369,8 +358,8 @@
 				<div class="sns-contents">
 					<div class="sns-box">
 						<h3 class="sns--title">Facebook</h3>
-						<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D105485768711934%26id%3D100077515332905&width=750&show_text=true&height=506&appId" width="750" height="506" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>				</div>
-				<div class="sns-contents">
+						<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D105485768711934%26id%3D100077515332905&width=750&show_text=true&height=506&appId" width="750" height="506" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+					</div>
 					<div class="sns-box">
 						<h3 class="sns--title">Twitter</h3>
 						<a class="twitter-timeline" data-height="315" href="https://twitter.com/home?ref_src=twsrc%5Etfw">Tweets by home</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -386,9 +375,9 @@
 			<ul>
 				<li class="footer--menu"><a href="#info">お知らせ</a></li>
 				<li class="footer--menu"><a href="#fee">料金</a></li>
-				<li class="footer--menu"><a href="#">施設紹介</a></li>
-				<li class="footer--menu"><a href="#">インストラクター紹介</a></li>
-				<li class="footer--menu"><a href="#">アクセス・SNS</a></li>
+				<li class="footer--menu"><a href="#service">サービス・設備</a></li>
+				<li class="footer--menu"><a href="#instructor">インストラクター紹介</a></li>
+				<li class="footer--menu"><a href="#location">アクセス・SNS</a></li>
 			</ul>
 		</nav>
 

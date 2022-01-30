@@ -1,0 +1,328 @@
+// レスポンシブ
+@media screen and (max-width: 1420px) {
+    #experience {
+        .experience--title1,
+        .experience--title2 {
+            font-size: 35px;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #experience {
+        .experience--title1,
+        .experience--title2 {
+            font-size: 32px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #experience {
+        .experience--title1,
+        .experience--title2 {
+            font-size: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    // 共通
+    .contents {
+        flex-direction: column;
+    }
+
+    article {
+        border-right: none;
+        width: 100%;
+    }
+    aside {
+        width: 100%;
+    }
+
+    .content {
+        padding-top: 5px;
+    }
+
+    // ヘッダー
+    #header {
+        .header-pc-menu {
+            margin-bottom: 20px;
+            .header--reserve {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    // メイン（カルーセル）
+    #carousel {
+        margin-bottom: 20px;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, 1fr);
+
+        .carousel--list {
+            .carousel--main {
+                object-fit: contain;
+                grid-column: 1 / 2;
+                grid-row: 1;
+
+                .carousel--img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .carousel--parts {
+                overflow: hidden;
+                grid-column: 1 / 2;
+                grid-row: 2;
+            }
+        }
+
+        .carousel--text {
+            position: static;
+            height: auto;
+            margin-top: 10px;
+            width: 100%;
+
+            .main-message {
+                font-size: 20px;
+            }
+            .sub-message {
+                font-size: 18px;
+            }
+            .detail-message {
+                font-size: 18px;
+            }
+        }
+    }
+
+    // SNS
+    #sns {
+        .sns-box {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    // 共通
+    section {
+        margin-bottom: 10px;
+    }
+
+    // ヘッダー
+    #header {
+        // ハンバーガーメニュー
+        .sp-menu {
+            height: 100vh;
+            visibility: visible;
+            display: initial;
+            z-index: 2;
+            transition: all .5s;
+
+            .container {
+                height: 100px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 0;
+
+                .sp-menu--btn {
+                    position: fixed;
+                    top: 0;
+                    margin-bottom: 10px;
+                    z-index: 999;
+                    width: 60px;
+                    height: 60px;
+                    background-color: $sRed;
+
+                    span {
+                        margin: auto;
+                        background-color: white;
+                        width: 35px;
+                        height: 2px;
+                        display: block;
+                        margin-bottom: 9px;
+                        transition: transform 0.7s;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                text-align: center;
+                padding: 64px;
+                opacity: 0;
+                transition: opacity 1s;
+                background-color: $sRed;
+                z-index: 10;
+                height: 100vh;
+                z-index: 998;
+
+                .mobile-menu--item {
+                    margin-top: 24px;
+                    opacity: 0;
+                    transform: translateY(16px);
+                    transition: opacity 0.3s, transform 0.3s;
+                }
+            }
+
+            .hide {
+                display: none;
+            }
+        }
+
+        // メニューオープン時
+        .menu-open {
+            .sp-menu--btn {
+                span {
+
+                    &:nth-child(1) {
+                        transition-delay: 70ms;
+                        transform: translateY(11px) rotate(135deg);
+                    }
+    
+                    &:nth-child(2) {
+                        transition-delay: 0s;
+                        transform: translateX(-18px) scaleX(0);
+                    }
+    
+                    &:nth-child(3) {
+                        transition-delay: 140ms;
+                        transform: translateY(-11px) rotate(-135deg);
+                    }
+                }
+            }
+
+            .mobile-menu {
+                opacity: 1;
+                
+                .mobile-menu--item {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: none;
+
+                    @for $i from 1 through 5 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: $i * 0.5s;
+                        }
+                    }
+                }
+                a:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .header-pc-menu {
+            flex-direction: column;
+
+            .logo {
+                margin-bottom: 30px;
+    
+                img {
+                    width: 200px;
+                }
+            }
+    
+            .header--reserve {
+                text-align: center;
+                margin: 20px;
+            }
+        }
+        
+        .pc-menu {
+            display: none;
+        }
+
+    }
+
+    // 料金
+    #fee {
+        .fee-list {
+            width: 95%;
+        }
+    }
+
+    #service {
+        .content {
+            margin-bottom: 50px;
+        }
+
+        .service-top {
+            margin-bottom: 50px;
+            .service-img {
+                width: 100%;
+            }
+            .service-text {
+                font-size: 20px;
+                text-align: center;
+                width: 90%;
+                top: 35%;
+                left: -3%;
+            }
+        }
+
+        .grid {
+            grid-template-columns: auto;
+        }
+
+        .service-item--text {
+            font-size: 20px;
+        }
+    }
+
+    #instructor {
+        margin-bottom: 30px;
+        .instructor-list {
+            .instructor-left {
+                display: flex;
+                flex-direction: column;
+                background-color: $sRed;
+                color: white;
+
+                .instructor-left--img {
+                    width: 90%;
+                    border-radius: 50%;
+                }
+            }
+            .instructor-right {
+                display: flex;
+                flex-direction: column;
+                background-color: $sRed;
+                color: white;
+
+                .instructor-right--img {
+                    width: 90%;
+                    border-radius: 50%;
+                    margin: 0;
+                }
+            }
+            .instructor-right--message {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    #experience {
+        .experience--title1,
+        .experience--title2 {
+            font-size: 40px;
+        }
+    }
+
+    #location {
+        .location--title {
+            margin-right: 20px;
+        }
+    }
+}

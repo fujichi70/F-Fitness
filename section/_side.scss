@@ -1,133 +1,174 @@
 // サイドバー
 #experience {
-  margin: 0 10px 40px;
-  .experience--parts {
-	  margin: 0 0 30px;
-    .experience--info {
-      position: relative;
-      visibility: visible;
-      position: relative;
-      max-width: 100%;
-      height: 400px;
+    margin: 0 10px 40px;
+    .experience--parts {
+        margin: 0 0 30px;
+        .experience--info {
+            position: relative;
+            visibility: visible;
+            position: relative;
+            max-width: 100%;
+            height: 400px;
 
-      &::before {
-        content: "";
-        z-index: 2;
-        background-color: rgba(0, 0, 0, 0.637);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 415px;
-        display: block;
-      }
+            &::before {
+                content: "";
+                z-index: 2;
+                background-color: rgba(0, 0, 0, 0.637);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 415px;
+                display: block;
+            }
 
-      &:hover {
-		&::before {
-			display: none;
-		}
-	  .img-box:nth-child(2) {
-        display: none;
-      }
+            &:hover {
+                &::before {
+                    display: none;
+                }
+                .experience--title1 {
+                    animation: chars-appear 0.3s forwards;
+                }
 
-      .img-box .experience--title1 {
-        opacity: 1;
-      }
-	}
+                @keyframes chars-appear {
+                    0% {
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                    100% {
+                        transform: translate(-50%, -50%) scale(1.1);
+                    }
+                }
 
-      .img-box {
-        .experience--title1 {
-          color: white;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 2;
-          opacity: 0;
-		  text-align: center;
+                .img-box:nth-child(2) {
+                    display: none;
+                }
+
+                .img-box .experience--title1 {
+                    opacity: 1;
+                }
+            }
+
+            .img-box {
+                .experience--title1 {
+                    color: white;
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 2;
+                    opacity: 0;
+                    text-align: center;
+                }
+
+                .experience--title2 {
+                    color: white;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 2;
+                    text-align: center;
+                }
+
+                .experience--img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    object-fit: cover;
+                }
+            }
         }
-
-        .experience--title2 {
-          color: white;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 2;
-		  text-align: center;
-        }
-
-        .experience--img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          object-fit: cover;
-        }
-      }
     }
-  }
 
-  .experience--message {
-	  font-size: 20px;
-	  line-height: 22px;
-	  margin: 0 auto;
-  }
+    .experience--message {
+        font-size: 20px;
+        line-height: 22px;
+        margin: 0 auto;
+    }
+
+    .experience--animation {
+        background-color: rgba(251, 82, 82, 0.712);
+        margin-top: 10px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        color: white;
+        display: inline-block;
+        width: 22ch;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3s 5s steps(21), caret 0.3s steps(1) infinite;
+    }
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+    }
 }
 
 #location {
-  margin: 0 10px;
-  .location--info {
-    .location--pin {
-      position: relative;
-      top: 3px;
-      left: 50%;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      background-color: $sPink;
-      box-shadow: -3px -3px 3px 0 $sRed inset;
-      display: inline-block;
-      z-index: 10;
+    margin: 0 10px 50px;
+    .location--info {
+        .location--pin {
+            position: relative;
+            top: 3px;
+            left: 50%;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: $sPink;
+            box-shadow: -3px -3px 3px 0 $sRed inset;
+            display: inline-block;
+            z-index: 10;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 30%;
-        width: 3px;
-        height: 15px;
-        background-color: rgba(0, 0, 0, 0.226);
-        transform: rotate(30deg);
-        z-index: -1;
-        box-shadow: 0 3.5px 1px 0 black;
-      }
-    }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 30%;
+                width: 3px;
+                height: 15px;
+                background-color: rgba(0, 0, 0, 0.226);
+                transform: rotate(30deg);
+                z-index: -1;
+                box-shadow: 0 3.5px 1px 0 black;
+            }
+        }
 
-    .location--texts {
-      margin: 0 10px;
-      background-color: $sRed;
-      color: white;
-      padding: 10px 10px;
-      margin-bottom: 30px;
-    }
+        .location--texts {
+            margin: 0 10px;
+            background-color: $sRed;
+            color: white;
+            padding: 10px 10px;
+            margin-bottom: 30px;
+        }
 
-    .location-map {
-      iframe {
-        max-width: 100%;
-        object-fit: contain;
-      }
+        .location-map {
+            iframe {
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
     }
-  }
 }
 
 #sns {
-  .sns-contents {
-    margin-bottom: 20px;
-    .sns-box {
-      iframe {
-        width: 100%;
-      }
+    .sns-contents {
+        margin-bottom: 20px;
+        .sns-box {
+            iframe {
+                width: 100%;
+            }
+            .sns--title {
+                background: $sRed;
+                color: white;
+                display: inline-block;
+                border-radius: 20px;
+                padding: 5px 20px;
+                margin: 0 0 10px 10px;
+            }
+        }
     }
-  }
 }
