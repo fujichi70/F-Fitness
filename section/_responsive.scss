@@ -46,7 +46,6 @@
         }
     }
 
-
     // ヘッダー
     #header {
         .header-pc-menu {
@@ -125,87 +124,81 @@
     #header {
         // ハンバーガーメニュー
         .sp-menu {
-            height: 100vh;
-            visibility: visible;
             display: initial;
-            z-index: 2;
-            transition: all .5s;
+            .hamburger {
+                display: block;
+                position: fixed;
+                z-index: 999;
+                top: 0;
+                right: 0;
+                width: 60px;
+                height: 60px;
+                background-color: rgba(251, 82, 82, 0.74);
+                border-radius: 10px;
+                text-align: center;
+                padding-top: 15px;
 
-            .container {
-                height: 100px;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                padding: 0;
+                span {
+                    display: block;
+                    margin: auto;
+                    background-color: white;
+                    width: 35px;
+                    height: 2px;
+                    margin-bottom: 9px;
+                    transition: transform 0.7s;
 
-                .sp-menu--btn {
-                    position: fixed;
-                    top: 0;
-                    margin-bottom: 10px;
-                    z-index: 999;
-                    width: 60px;
-                    height: 60px;
-                    background-color: $sRed;
-
-                    span {
-                        margin: auto;
-                        background-color: white;
-                        width: 35px;
-                        height: 2px;
-                        display: block;
-                        margin-bottom: 9px;
-                        transition: transform 0.7s;
-
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
+                    &:last-child {
+                        margin-bottom: 0;
                     }
                 }
             }
 
             .mobile-menu {
                 position: fixed;
+                z-index: 998;
                 top: 0;
-                right: 0;
-                bottom: 0;
                 left: 0;
                 text-align: center;
-                padding: 64px;
-                opacity: 0;
-                transition: opacity 1s;
+                transform: translateY(-100%);
+                transition: all 0.6s;
                 background-color: $sRed;
-                z-index: 10;
+                width: 100%;
                 height: 100vh;
-                z-index: 998;
 
                 .mobile-menu--item {
-                    margin-top: 24px;
                     opacity: 0;
-                    transform: translateY(16px);
-                    transition: opacity 0.3s, transform 0.3s;
-                }
-            }
+                    width: 100%;
+                    height: auto;
+                    padding: 20px 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.336);
+                    transition: opacity .2s linear;
+                        &:hover {
+                            background-color: rgb(163, 57, 57);
+                        }
 
-            .hide {
-                display: none;
+
+                    a {
+                        display: block;
+                        padding: 1px 0;
+                    }
+                }
             }
         }
 
         // メニューオープン時
-        .menu-open {
-            .sp-menu--btn {
+        .sp-menu.menu-open {
+            .hamburger {
                 span {
-
                     &:nth-child(1) {
                         transition-delay: 70ms;
                         transform: translateY(11px) rotate(135deg);
                     }
-    
+
                     &:nth-child(2) {
                         transition-delay: 0s;
                         transform: translateX(-18px) scaleX(0);
                     }
-    
+
                     &:nth-child(3) {
                         transition-delay: 140ms;
                         transform: translateY(-11px) rotate(-135deg);
@@ -214,17 +207,13 @@
             }
 
             .mobile-menu {
-                opacity: 1;
-                overflow: hidden;
-                
-                .mobile-menu--item {
-                    visibility: visible;
-                    opacity: 1;
-                    transform: none;
+                transform: translateY(0);
 
+                .mobile-menu--item {
+                    opacity: 1;
                     @for $i from 1 through 5 {
                         &:nth-child(#{$i}) {
-                            animation-delay: $i * 0.5s;
+                            transition-delay: $i * .2s;
                         }
                     }
                 }
@@ -239,22 +228,21 @@
 
             .logo {
                 margin-bottom: 30px;
-    
+
                 img {
                     width: 200px;
                 }
             }
-    
+
             .header--reserve {
                 text-align: center;
                 margin: 20px;
             }
         }
-        
+
         .pc-menu {
             display: none;
         }
-
     }
 
     // 料金
@@ -289,7 +277,6 @@
 
         .item {
             height: 80%;
-
         }
         .service-item--img {
             width: 20%;
