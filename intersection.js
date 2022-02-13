@@ -4,41 +4,33 @@
     const item = document.querySelectorAll(".item");
     const content = document.querySelectorAll(".content");
     const instructor = document.querySelectorAll(".js-instructor");
-    const info = document.getElementById('info');
+    const info = document.getElementById("info");
+    const elements = [item, content, instructor, info];
+
     const options = {
         threshold: 0.2,
     };
-    
-    const appearObserver = new IntersectionObserver((entries, observer) => {
-        observerEvent(entries, observer, "appear");
-    }, options);
-    
-    const titleObserver = new IntersectionObserver((entries, observer) => {
-        observerEvent(entries, observer, "title-open");
-    }, options);
-    
-    const instructorObserver = new IntersectionObserver((entries, observer) => {
-        observerEvent(entries, observer, "advent");
-    }, options);
+
+    const observer = new IntersectionObserver(callBack, options);
     
     document.addEventListener("DOMContentLoaded", () => {
-        registObserver(item, appearObserver);
-        registObserver(content, titleObserver);
-        registObserver(instructor, instructorObserver);
+        registObserver();
     });
-
-    function registObserver(targets, io) {
-        for (let i = 0; i < targets.length; i++) {
-            io.observe(targets[i]);
-        }
+    
+    function registObserver() {
+        elements.forEach((element) => {
+            for (let i = 0; i < element.length; i++) {
+                observer.observe(element[i]);
+            }
+        });
     }
 
-    function observerEvent(entries, observer, addClass) {
+    function callBack(entries, observer) {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) {
                 return;
             }
-            entry.target.classList.add(addClass);
+            entry.target.classList.add("appear");
             observer.unobserve(entry.target);
         });
     }

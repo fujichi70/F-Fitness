@@ -57,13 +57,11 @@
                         top: 0;
                         right: 0;
                         border-width: 0 16px 16px 0;
-                        border-color: rgba(251, 82, 82, 0.87)
-                            rgba(251, 82, 82, 0.87) $sRed $sRed;
+                        border-color: rgba(251, 82, 82, 0.87) rgba(251, 82, 82, 0.87) $sRed $sRed;
                         border-style: solid;
                         display: block;
                         width: 0;
-                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.274),
-                            -1px 1px 1px rgba(0, 0, 0, 0.2);
+                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.274), -1px 1px 1px rgba(0, 0, 0, 0.2);
                     }
                 }
             }
@@ -116,18 +114,16 @@
                         top: 0;
                         right: 0;
                         border-width: 0 16px 16px 0;
-                        border-color: rgba(251, 82, 82, 0.87)
-                            rgba(251, 82, 82, 0.87) $sRed $sRed;
+                        border-color: rgba(251, 82, 82, 0.87) rgba(251, 82, 82, 0.87) $sRed $sRed;
                         border-style: solid;
                         display: block;
                         width: 0;
-                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.274),
-                            -1px 1px 1px rgba(0, 0, 0, 0.2);
+                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.274), -1px 1px 1px rgba(0, 0, 0, 0.2);
                     }
                 }
             }
         }
-        .advent {
+        .appear {
             opacity: 1;
             transform: translateX(0);
         }
