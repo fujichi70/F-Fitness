@@ -8,7 +8,7 @@ body {
     height: auto;
     margin: 0;
     padding: 0;
-    font-family: 'Zen Old Mincho', serif;
+    font-family: "Zen Old Mincho", serif;
     background: linear-gradient(-45deg, #fb463d42, #fb8c3d4d, #fdac1546);
     background-size: 2000% 2000%;
     animation: gradation 10s ease infinite alternate;
@@ -64,18 +64,24 @@ a:hover {
 // 共通（タイトル）
 section {
     margin-bottom: 100px;
-    overflow: hidden;
+    // overflow: hidden;
 
     .content {
+        position: relative;
         opacity: 0;
-        background-color: $sRed;
-        color: white;
-        height: 70px;
+        color: $sRed;
         margin-bottom: 50px;
         padding-bottom: 10px;
 
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            border-bottom: solid 2px $sRed;
+        }
+
         .flex {
-            justify-content: center;
             align-items: center;
 
             .fas {
@@ -85,31 +91,41 @@ section {
             }
 
             .info--en {
-                font-family: "Imperial Script", cursive;
-                text-align: center;
-                font-size: 40px;
+                font-family: "Lobster", cursive;
+                font-size: 38px;
             }
         }
         .info--menu {
-            text-align: center;
-            line-height: 1px;
+            position: absolute;
+            left: 45px;
         }
-        
     }
 }
 
-.title-open {
+.content.title-open {
     animation: open-title 1s forwards;
     opacity: 1;
+    &::after {
+        animation: border_anim 2s linear forwards;
+    }
 }
 
 @keyframes open-title {
     from {
         opacity: 0;
-        transform: scale(0.1);
+        transform: scale(0.5);
     }
     to {
         opacity: 1;
-        transform: scale(1.1);
+        transform: scale(1);
+    }
+}
+
+@keyframes border_anim {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
     }
 }

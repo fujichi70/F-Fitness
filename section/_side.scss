@@ -1,15 +1,16 @@
 // サイドバー
 #experience {
     margin: 0 10px 40px;
+    
     .experience--parts {
         margin: 0 0 30px;
+
         .experience--info {
             position: relative;
             visibility: visible;
-            position: relative;
             max-width: 645px;
             margin: auto;
-            height: 400px;
+            height: 430px;
 
             &::before {
                 content: "";
@@ -20,7 +21,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                height: 415px;
+                height: 430px;
                 display: block;
             }
 
@@ -52,12 +53,11 @@
 
             .img-box {
                 .experience--title1 {
-                    color: white;
                     position: absolute;
-                    width: 100%;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    color: white;
                     z-index: 2;
                     opacity: 0;
                     text-align: center;
@@ -74,6 +74,7 @@
                 }
 
                 .experience--img {
+                    max-width: 100%;
                     position: absolute;
                     top: 50%;
                     left: 50%;

@@ -1,58 +1,45 @@
 "use strict";
 
 {
-  const item = document.querySelectorAll(".item");
-  const content = document.querySelectorAll(".content");
-  const instructor = document.querySelectorAll('.js-instructor');
-
-  const options = {
-    threshold: 0.2,
-  };
-
-  const appearObserver = new IntersectionObserver(appearCallback, options);
-  const titleObserver = new IntersectionObserver(titleCallback, options);
-  const instructorObserver = new IntersectionObserver(instructorCallback, options);
-
-  for (let i = 0; i < item.length; i++) {
-      appearObserver.observe(item[i]);
-    }
+    const item = document.querySelectorAll(".item");
+    const content = document.querySelectorAll(".content");
+    const instructor = document.querySelectorAll(".js-instructor");
+    const info = document.getElementById('info');
+    const options = {
+        threshold: 0.2,
+    };
     
-    function appearCallback(entries, observer) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-      entry.target.classList.add("appear");
-      observer.unobserve(entry.target);
+    const appearObserver = new IntersectionObserver((entries, observer) => {
+        observerEvent(entries, observer, "appear");
+    }, options);
+    
+    const titleObserver = new IntersectionObserver((entries, observer) => {
+        observerEvent(entries, observer, "title-open");
+    }, options);
+    
+    const instructorObserver = new IntersectionObserver((entries, observer) => {
+        observerEvent(entries, observer, "advent");
+    }, options);
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        registObserver(item, appearObserver);
+        registObserver(content, titleObserver);
+        registObserver(instructor, instructorObserver);
     });
-  }
 
-  
-  for (let i = 0; i < content.length; i++) {
-    titleObserver.observe(content[i]);
-  }
+    function registObserver(targets, io) {
+        for (let i = 0; i < targets.length; i++) {
+            io.observe(targets[i]);
+        }
+    }
 
-  function titleCallback(entries, observer) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-      entry.target.classList.add("title-open");
-      observer.unobserve(entry.target);
-    });
-  }
-
-  for (let i = 0; i < instructor.length; i++) {
-    instructorObserver.observe(instructor[i]);
-  }
-
-  function instructorCallback(entries, observer) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-      entry.target.classList.add("advent");
-      observer.unobserve(entry.target);
-    });
-  }
+    function observerEvent(entries, observer, addClass) {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+            entry.target.classList.add(addClass);
+            observer.unobserve(entry.target);
+        });
+    }
 }
