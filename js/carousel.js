@@ -27,9 +27,9 @@
     },
   ];
 
-  const mainImage = document.getElementById("carousel--main");
-  const prev = document.getElementById("carousel--prev");
-  const next = document.getElementById("carousel--next");
+  const mainImage = document.getElementById("carousel-main");
+  const prev = document.getElementById("carousel-prev");
+  const next = document.getElementById("carousel-next");
   const mainMessage = document.getElementById("js-main-message");
   const subMessage = document.getElementById("js-sub-message");
   const detailMessage = document.getElementById("js-detail-message");
@@ -78,7 +78,7 @@
   }
 
   function nextImage() {
-    document.querySelectorAll(".carousel--thumbnails > li")[target].click();
+    document.querySelectorAll(".carousel-thumbnails > li")[target].click();
     nextElement();
   }
 
@@ -141,7 +141,7 @@
         }, 800);
 
         const thumbnails = document.querySelectorAll(
-          ".carousel--thumbnails > li"
+          ".carousel-thumbnails > li"
         );
         thumbnails[currentIndex].classList.remove("current");
         currentIndex = index;
@@ -149,7 +149,7 @@
       });
 
       li.appendChild(img);
-      document.querySelector(".carousel--thumbnails").appendChild(li);
+      document.querySelector(".carousel-thumbnails").appendChild(li);
     }
   }
 }

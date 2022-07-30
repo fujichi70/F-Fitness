@@ -1,4 +1,4 @@
-// インフォ
+// お知らせ（bootstrap使用）
 #info {
     .accordion {
         .accordion-button {
@@ -18,12 +18,12 @@
         }
 
         .table {
-            width: 50%;
             text-align: center;
             border-collapse: collapse;
             border-spacing: 0;
+            max-width: 500px;
 
-            .news-table-maintext {
+            .news-table--maintext {
                 padding: 10px;
                 color: white;
                 border: solid 1px $sRed;

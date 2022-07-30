@@ -12,7 +12,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
 		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Zen+Old+Mincho&family=Lobster&display=swap"
+	<link
+		href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=M+PLUS+1+Code&family=Lobster&family=Rampart+One&display=swap"
 		rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -20,12 +21,6 @@
 </head>
 
 <body>
-
-	<div class="opening">
-		<div class="opening--title">
-			<img class="opening--img" src="img/logo_w.png" alt="ロゴ">
-		</div>
-	</div>
 
 	<header id="header">
 		<div class="sp-menu">
@@ -36,59 +31,58 @@
 			</div>
 
 			<nav class="mobile-menu">
-				<ul class="mobile-menu--main">
-					<li class="mobile-menu--item"><a href="#info">お知らせ</a></li>
-					<li class="mobile-menu--item"><a href="#fee">料金</a></li>
-					<li class="mobile-menu--item"><a href="#service">サービス・施設</a></li>
-					<li class="mobile-menu--item"><a href="#instructor">インストラクター紹介</a></li>
-					<li class="mobile-menu--item"><a href="#location">アクセス・SNS</a></li>
+				<ul class="mobile-menu--parts">
+					<li class="mobile-menu--list"><a class="mobile-menu--item" href="#">トップ</a></li>
+					<li class="mobile-menu--list"><a class="mobile-menu--item" href="#info">お知らせ</a></li>
+					<li class="mobile-menu--list"><a class="mobile-menu--item" href="#fee">料金</a></li>
+					<li class="mobile-menu--list"><a class="mobile-menu--item" href="#service">サービス・設備</a></li>
+					<li class="mobile-menu--list"><a class="mobile-menu--item" href="#instructor">インストラクター紹介</a></li>
+					<li class="mobile-menu--list"><a class="mobile-menu--item" href="#accesssns">アクセス・SNS</a></li>
 				</ul>
 			</nav>
 
-		</div>
-		<!--sp-menu-->
+		</div><!-- .sp-menu -->
 
-		<div class="flex header-pc-menu">
+		<div class="header-pc--menu flex">
 			<div class="logo"><img src="img/logo.png" alt="ロゴ"></div>
-			<a class="header--reserve" href="#">体験予約を申し込む</a>
+			<a class="reserve" href="#">体験予約を申し込む</a>
 		</div>
+
 		<div class="pc-menu">
 			<nav class="pc-menu--total">
-				<ul class="pc-menu--main">
-					<li class="pc-menu--select">
-						<a class="pc-menu--text" href="#">ホーム</a>
-						<ul class="pc-menu--second">
-							<li class="pc-menu--second-text"><a href="#info">お知らせ</a></li>
-						</ul>
-					</li>
-					<li class="pc-menu--select"><a href="#fee">料金</a></li>
-					<li class="pc-menu--select">
-						<a class="pc-menu--text" href="#service">設備・インストラクター</a>
-						<ul class="pc-menu--second">
-							<li class="pc-menu--second-text"><a href="#service">サービス・施設</a></li>
-							<li class="pc-menu--second-text"><a href="#instructor">インストラクター紹介</a></li>
-						</ul>
-					</li>
-					<li class="pc-menu--select"><a href="#location">アクセス・SNS</a></li>
+				<ul class="pc-menu--parts">
+					<li class="pc-menu--list"><a href="#">トップ</a></li>
+					<li class="pc-menu--list"><a href="#info">お知らせ</a></li>
+					<li class="pc-menu--list"><a href="#fee">料金</a></li>
+					<li class="pc-menu--list"><a href="#service">サービス・設備</a></li>
+					<li class="pc-menu--list"><a href="#instructor">インストラクター</a></li>
+					<li class="pc-menu--list"><a href="#accesssns">アクセス・SNS</a></li>
 				</ul>
 			</nav>
 		</div>
 
+		<div class="scroll">
+			<div class="scroll-parts">
+				<div class="scroll-arrow">
+					<span class="cursor">Scroll</span>
+				</div>
+			</div>
+		</div>
 	</header>
 
 
-	<main>
+	<main id="main">
 		<section id="carousel" class="carousel">
-			<div class="carousel--list">
-				<div class="carousel--main"><img class="carousel--img" id="carousel--main"></div>
-				<div class="carousel--parts">
-					<div id="carousel--prev" class="carousel--prev"><i class="fas fa-chevron-left fa-3x"></i></div>
-					<ul class="carousel--thumbnails"></ul>
-					<div id="carousel--next" class="carousel--next"><i class="fas fa-chevron-right fa-3x"></i></div>
+			<div class="carousel-list">
+				<div class="carousel-main"><img class="carousel-img" id="carousel-main"></div>
+				<div class="carousel-parts">
+					<div id="carousel-prev" class="carousel-prev"><i class="fas fa-chevron-left fa-3x"></i></div>
+					<ul class="carousel-thumbnails"></ul>
+					<div id="carousel-next" class="carousel-next"><i class="fas fa-chevron-right fa-3x"></i></div>
 				</div>
 			</div>
 			<div id="js-new-me" class="new-me"></div>
-			<div id='carousel--text' class="carousel--text">
+			<div id='carousel-text' class="carousel-text">
 				<h1 id="js-main-message" class="main-message"></h1>
 				<h2 id="js-sub-message" class="sub-message"></h2>
 				<p id="js-detail-message" class="detail-message"></p>
@@ -96,23 +90,50 @@
 		</section>
 	</main>
 
-	<section id="scroll">
-		<div class="scroll-parts">
-			<div class="scroll-arrow">
-				<span class="cursor">Scroll</span>
+	<section id="greeting">
+		<div class="content target">
+			<div class="flex">
+				<i class="fas fa-dumbbell"></i>
+				<h2 class="info-en">Greeting</h2>
+				<i class="fas fa-dumbbell"></i>
 			</div>
+			<p class="info-menu">-ご挨拶-</p>
+		</div>
+
+		<div class="greeting-box target">
+			<div class="flex">
+				<img class="greeting-img" src="img/greeting.png" alt="挨拶画像">
+				<div class="greeting-items">
+					<div class="greeting-title">代表からのあいさつ</div>
+					<div class="greeting-text--box">
+						<div class="greeting-text">はじめまして。当ジムにご興味をお持ちくださりありがとうございます。</div>
+						<div class="greeting-text">平岸駅すぐの地元の皆さまが気軽に顔を出せるジムを開設させていただきました！</div>
+						<div class="greeting-sp--display">
+							<div>
+								<div class="greeting-img--parts"><img class="greeting-img2" src="img/greeting2.png"
+										alt="挨拶画像"></div>
+								<div class="greeting-text">
+									パーソナルジムと聞くとハードルが高い…という方もいらっしゃるかと思います。そこで簡単にできるストレッチや体操をお手頃価格で受けることができるジムを目指しており、日々お客様とのコミュニ―ケーションを取りながらトレーニングを一緒に行っております。
+								</div>
+								<div class="greeting-text">体験だけでも大歓迎ですので、ぜひ一度気軽にいらっしゃってみてください！どうぞよろしくお願いいたします。</div>
+								<div class="greeting-text">佐藤</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		</div>
 	</section>
 
-
 	<section id="info">
-		<div class="content">
+		<div class="content target">
 			<div class="flex">
 				<i class="fas fa-dumbbell"></i>
-				<h2 class="info--en">information</h2>
+				<h2 class="info-en">Information</h2>
 				<i class="fas fa-dumbbell"></i>
 			</div>
-			<p class="info--menu">-お知らせ-</p>
+			<p class="info-menu">-お知らせ-</p>
 		</div>
 
 		<div class="accordion" id="accordionExample">
@@ -147,7 +168,7 @@
 							お間違えのないようにご来店くださいますようお願いいたします。</p>
 						<table class="table">
 							<tr>
-								<th class="news-table-maintext" colspan="2">年末年始スケジュール</th>
+								<th class="news-table--maintext" colspan="2">年末年始スケジュール</th>
 							</tr>
 							<tr>
 								<td class="date">12月28日まで</td>
@@ -176,7 +197,7 @@
 					data-bs-parent="#accordionExample">
 					<div class="accordion-body">
 						<p class="accordion-text">
-							今月から食事管理もご希望のお客様に低糖質のレシピをお渡しいたします！1週間ごとですので飽きずに栄養を摂りながら楽しくダイエット♪ご希望の方は特別に初回無料！1か月後も月500円なのでお得です♪
+							今月から食事管理もご希望のお客様に低糖質のレシピをお渡しいたします！１週間ごとですので飽きずに栄養を摂りながら楽しくダイエット♪ご希望の方は特別に初回無料！１か月後も月５００円なのでお得です♪
 						</p>
 					</div>
 				</div>
@@ -185,81 +206,80 @@
 	</section>
 
 	<section id="fee">
-		<div class="content">
+		<div class="content target">
 			<div class="flex">
 				<i class="fas fa-dumbbell"></i>
-				<h2 class="info--en">fee</h2>
+				<h2 class="info-en">Fee</h2>
 				<i class="fas fa-dumbbell"></i>
 			</div>
-			<p class="info--menu">-料金-</p>
+			<p class="info-menu">-料金-</p>
 		</div>
 
-		<div class="contents">
+		<div class="fee-content">
 			<article>
-				<div class="fee-box">
-					<table class="fee-list">
-						<tr>
-							<th class="month"></th>
-							<th class="month">月4回コース</th>
-							<th class="month">月8回コース</th>
-						</tr>
-						<tr>
-							<td class="fee-table">入会金</td>
-							<td class="fee-table" colspan="2">&yen;50,000</td>
-						</tr>
-						<tr>
-							<td class="fee-table">月会費</td>
-							<td class="fee-table">&yen;50,000 / 月</td>
-							<td class="fee-table">&yen;80,000 / 月</td>
-						</tr>
-						<tr>
-							<td class="fee-table">トレーニング時間</td>
-							<td class="fee-table">45分</td>
-							<td class="fee-table">60分</td>
-						</tr>
-					</table>
-				</div>
+				<table class="fee-table">
+					<tr>
+						<th class="month"></th>
+						<th class="month">月<span>４</span>回コース</th>
+						<th class="month">月<span>８</span>回コース</th>
+					</tr>
+					<tr>
+						<td class="fee-items">入会金</td>
+						<td class="fee-items" colspan="2">&yen;５０,０００</td>
+					</tr>
+					<tr>
+						<td class="fee-items">月会費</td>
+						<td class="fee-items">&yen;５０,０００ / 月</td>
+						<td class="fee-items">&yen;８０,０００ / 月</td>
+					</tr>
+					<tr>
+						<td class="fee-items">トレーニング時間</td>
+						<td class="fee-items">４５分</td>
+						<td class="fee-items">６０分</td>
+					</tr>
+					<tr>
+						<td class="fee-text" colspan="2">※すべて税込価格です。</td>
+					</tr>
+				</table>
 
-				<div class="fee--yoga-box">
-					<h2 class="fee--yoga-text">今月からオンラインヨガ始めました♪月2,000円から始められます。なんと無料お試し3か月！ぜひご参加ください。</h2>
-					<table class="fee--yoga-list">
-						<tr>
-							<td class="fee--yoga-table">オンラインヨガ</td>
-							<td class="fee--yoga-table" colspan="2">&yen;50,000</td>
-						</tr>
-					</table>
-				</div>
-			</article>
-			<aside>
 				<div class="experience">
-					<div class="experience--parts">
-						<div class="experience--info">
+					<div class="experience-parts">
+						<h1 class="experience-title">現在体験者キャンペーン中！</h1>
+						<p class="experience-word">入会金、事務手数料、月会費２か月分が無料！</p>
+						<div class="experience-info">
 							<div class="img-box">
-								<h1 class="experience--title1">二人三脚で<br>頑張りませんか？</h1>
-								<img class="experience--img" src="img/stylish.jpg" alt="克服した女性の画像">
+								<h2 class="experience-text1">二人三脚で<br>頑張りませんか？</h2>
+								<img class="experience-img" src="img/stylish.jpg" alt="克服した女性の画像">
 							</div>
 							<div class="img-box">
-								<h1 class="experience--title2">ひとりで<br>悩んでいる<br>あなたへ</h1>
-								<img class="experience--img" src="img/nonstylish.jpg" alt="悩んでいる女性の画像">
+								<h2 class="experience-text2">ひとりで<br>悩んでいる<br>あなたへ</h2>
+								<img class="experience-img" src="img/nonstylish.jpg" alt="悩んでいる女性の画像">
 							</div>
 						</div>
 					</div>
-					<p class="experience--message">お身体のお悩みやアドバイスいつでもなんでも聞けちゃいます！</p>
-					<p class="experience--message">体験受付中！今ならキャンペーン中でお安くサポートさせていただきます♪</p>
-					<p class="experience--message experience--animation">入会金、事務手数料、月会費２か月分が無料！</p>
+					<p class="experience-message">お身体のお悩みやアドバイスいつでもなんでも聞けちゃいます！</p>
+					<p class="experience-message">体験受付中！今ならキャンペーン中でお安くサポートさせていただきます♪</p>
+					<div class="experience-btn"><a class="reserve" href="#">体験予約を申し込む</a></div>
+				</div>
+			</article>
+
+			<aside>
+				<div class="fee-campaign--box">
+					<img class="fee-campaign--img" src="img/onlineyoga.png" alt="オンラインヨガ画像">
+					<img class="fee-campaign--img" src="img/stretch.png" alt="オンラインヨガ画像">
 				</div>
 			</aside>
 		</div>
 	</section>
 
 	<section id="service">
-		<div class="content">
+		<div class="content target">
 			<div class="flex">
 				<i class="fas fa-dumbbell"></i>
-				<h2 class="info--en">service & equipment</>
+				<h2 class="info-en">Service & Equipment</>
 					<i class="fas fa-dumbbell"></i>
 			</div>
-			<p class="info--menu">-サービス・設備-</p>
+			<p class="info-menu">-サービス・設備-</p>
 		</div>
 
 		<div class="service-top">
@@ -269,22 +289,22 @@
 			</p>
 		</div>
 
-		<div class="wrapper grid">
-			<div class="item">
+		<div class="service-group wrapper">
+			<div class="service-item target">
 				<p class="service-item--title">ソーシャルディスタンスの徹底</p>
 				<div class="service-item--parts">
 					<img class="service-item--img" src="img/human.png" alt="ソーシャルディスタンスアイコン">
 					<p class="service-item--text">密にならないようパーテーション等設置しております。</p>
 				</div>
 			</div>
-			<div class="item">
+			<div class="service-item target">
 				<p class="service-item--title">アルコール除菌徹底</p>
 				<div class="service-item--parts">
 					<img class="service-item--img" src="img/alcohol.png" alt="アルコールアイコン">
-					<p class="service-item--text">器具は全て使用ごとにアルコール除菌をしております。</p>
+					<p class="service-item--text">器具は基本的に使用しませんが、ダンベル等使用する際、全て使用ごとにアルコール除菌をしております。</p>
 				</div>
 			</div>
-			<div class="item">
+			<div class="service-item target">
 				<p class="service-item--title">無料レンタルが充実</p>
 				<div class="service-item--parts">
 					<img class="service-item--img" src="img/shirt.png" alt="トレーニングウェアアイコン">
@@ -292,14 +312,14 @@
 						いつでも手ぶらOK!トレーニングウェア上下、靴下、シューズ、ヘアゴムを無料貸し出ししております。また、不織布マスクも1枚お渡しできます。</p>
 				</div>
 			</div>
-			<div class="item">
+			<div class="service-item target">
 				<p class="service-item--title">飲料水・プロテイン無料</p>
 				<div class="service-item--parts">
 					<img class="service-item--img" src="img/water.png" alt="ウォーターアイコン">
 					<p class="service-item--text">飲料水・スポーツドリンク・プロテインドリンクなど無料でお渡ししております。</p>
 				</div>
 			</div>
-			<div class="item">
+			<div class="service-item target">
 				<p class="service-item--title">無料でシャワールームも利用可能</p>
 				<div class="service-item--parts">
 					<img class="service-item--img" src="img/shower.png" alt="シャワーアイコン">
@@ -308,7 +328,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="item">
+			<div class="service-item target">
 				<p class="service-item--title">アメニティ充実</p>
 				<div class="service-item--parts">
 					<img class="service-item--img" src="img/mirror.png" alt="鏡のアイコン">
@@ -320,99 +340,126 @@
 	</section>
 
 	<section id="instructor">
-		<div class="content">
+		<div class="content target">
 			<div class="flex">
 				<i class="fas fa-dumbbell"></i>
-				<h2 class="info--en">instructor</h2>
+				<h2 class="info-en">Instructor</h2>
 				<i class="fas fa-dumbbell"></i>
 			</div>
-			<p class="info--menu">-インストラクター紹介-</p>
+			<p class="info-menu">-インストラクター紹介-</p>
 		</div>
 
-		<div class="instructor-list">
-			<div class="js-instructor instructor-left">
-				<img class="instructor-left--img" src="img/instructor-1.png" alt="インストラクター佐藤浩輔の画像">
-				<div class="instructor-left--texts">
+		<div class="instructor-box">
+			<div class="instructor-items target">
+				<div class="instructor-left">
 					<p class="instructor-left--name">佐藤浩輔</p>
-					<p class="instructor-left--text">
-						インストラクター歴7年。NESTA-PFT（全米エクササイズ＆スポーツトレーナー協会資格）・健康管理能力検定1級・健康運動実践指導者認定。</p>
-					<p class="instructor-left--message">食事管理もお任せください!<br>一緒にトレーニング頑張りましょう!</p>
+					<div class="flex">
+						<img class="instructor-left--img" src="img/instructor-1.png" alt="インストラクター佐藤浩輔の画像">
+						<div class="instructor-left--texts">
+							<ul class="instructor-left--parts">
+								<li class="instructor-left--list">インストラクター歴7年</li>
+								<li class="instructor-left--list">NESTA-PFT（全米エクササイズ＆スポーツトレーナー協会資格）</li>
+								<li class="instructor-left--list">柔道整復師認定</li>
+								<li class="instructor-left--list">健康管理能力検定1級認定</li>
+								<li class="instructor-left--list">健康運動実践指導者認定</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="js-instructor instructor-right">
-				<div class="instructor-right--texts">
-					<p class="instructor-right--name">鈴木彩佳</p>
-					<p class="instructor-right--text">インストラクター歴5年。日本トレーニング指導者協会トレーニング指導者認定。BASIピラティス認定。</p>
-					<p class="instructor-right--message">体の仕組みを知りながら一緒に楽しくトレーニングしましょう♪</p>
+			<div class="instructor-items target">
+				<div class="instructor-right target">
+					<div class="instructor-right--box">
+						<p class="instructor-right--name">鈴木彩佳</p>
+					</div>
+					<div class="instructor-right--texts">
+						<div class="flex">
+							<ul class="instructor-right--parts">
+								<li class="instructor-right--list">インストラクター歴5年</li>
+								<li class="instructor-right--list">日本トレーニング指導者協会トレーニング指導者認定</li>
+								<li class="instructor-right--list">健康管理能力検定1級認定</li>
+								<li class="instructor-right--list">全国ヨガライアンス認定</li>
+								<li class="instructor-right--list">BASIピラティス認定</li>
+							</ul>
+							<img class="instructor-right--img" src="img/instructor-2.png" alt="インストラクター鈴木彩佳の画像">
+						</div>
+					</div>
 				</div>
-				<img class="instructor-right--img" src="img/instructor-2.png" alt="インストラクター鈴木彩佳の画像">
 			</div>
 		</div>
 	</section>
 
+	<section id="accesssns">
+		<div class="content target">
+			<div class="flex">
+				<i class="fas fa-dumbbell"></i>
+				<h2 class="info-en">Access & SNS</h2>
+				<i class="fas fa-dumbbell"></i>
+			</div>
+			<p class="info-menu">-アクセス・SNS-</p>
+		</div>
 
-	<section id="location">
-		<div class="location--info">
-			<div class="location--pin"></div>
-			<div class="location--texts">
-				<h3 class="location--title">F Fitness</h3>
+		<div class="access flex">
+			<div class="access-map">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1458.1550074956688!2d141.36835244573504!3d43.034908326713484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b2a3f5170135f%3A0x65406f1e4d54923f!2z5bmz5bK444K544Kv44Ko44Ki44OT44Or!5e0!3m2!1sja!2sjp!4v1657160830675!5m2!1sja!2sjp"
+					width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<div class="access-texts">
+				<h3 class="access-title">Ｆ Ｆｉｔｎｅｓｓ</h3>
 				<p>
-					住所：東京都渋谷区◯◯2丁目20-12<br>
-					電話番号：03-◯◯◯◯-◯◯◯◯<br>
+					住所：〒062-0933 北海道札幌市豊平区平岸３条７丁目１−２７<br>
+					電話番号：011-◯◯◯-◯◯◯◯<br>
 					営業時間：10:00 ～ 20:00<br>
 					定休日：火曜日
 				</p>
 			</div>
 		</div>
-		<div class="location-map">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.60744581524415!2d139.7032586969147!3d35.65929097881826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b58425587bd%3A0xc6b8afa73cd2de92!2z44CSMTUwLTAwMDIg5p2x5Lqs6YO95riL6LC35Yy65riL6LC377yS5LiB55uu77yS77yQ4oiS77yR77yS!5e0!3m2!1sja!2sjp!4v1642855819970!5m2!1sja!2sjp"
-				width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+		<div class="sns">
+			<div class="sns-contents">
+				<div class="sns-box">
+					<h3 class="sns-title">Facebook</h3>
+					<iframe
+						src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D105485768711934%26id%3D100077515332905&width=750&show_text=true&height=506&appId"
+						width="750" height="506" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+						allowfullscreen="true"
+						allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+				</div>
+				<div class="sns-box">
+					<h3 class="sns-title">Twitter</h3>
+					<a class="twitter-timeline" data-height="315"
+						href="https://twitter.com/home?ref_src=twsrc%5Etfw">Tweets
+						by home</a>
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<section id="sns">
-		<div class="sns-contents">
-			<div class="sns-box">
-				<h3 class="sns--title">Facebook</h3>
-				<iframe
-					src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D105485768711934%26id%3D100077515332905&width=750&show_text=true&height=506&appId"
-					width="750" height="506" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-					allowfullscreen="true"
-					allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-			</div>
-			<div class="sns-box">
-				<h3 class="sns--title">Twitter</h3>
-				<a class="twitter-timeline" data-height="315" href="https://twitter.com/home?ref_src=twsrc%5Etfw">Tweets
-					by home</a>
-				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			</div>
-		</div>
-
-	</section>
-
-	<footer>
-		<nav class="footer--total">
+	<footer id="footer">
+		<nav class="footer-box">
 			<ul>
-				<li class="footer--menu"><a href="#">TOP</a></li>
-				<li class="footer--menu"><a href="#info">お知らせ</a></li>
-				<li class="footer--menu"><a href="#fee">料金</a></li>
-				<li class="footer--menu"><a href="#service">サービス・設備</a></li>
-				<li class="footer--menu"><a href="#instructor">インストラクター紹介</a></li>
-				<li class="footer--menu"><a href="#location">アクセス・SNS</a></li>
+				<li class="footer-list"><a href="#">TOP</a></li>
+				<li class="footer-list"><a href="#info">お知らせ</a></li>
+				<li class="footer-list"><a href="#fee">料金</a></li>
+				<li class="footer-list"><a href="#service">サービス・設備</a></li>
+				<li class="footer-list"><a href="#instructor">インストラクター</a></li>
+				<li class="footer-list"><a href="#access">アクセス・SNS</a></li>
 			</ul>
 		</nav>
 
-		<p class="name">2021 Fujichi</p>
+		<p class="name">2021 &copy;Fujichi</p>
 	</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
-	<script src="opening.js"></script>
-	<script src="carousel.js"></script>
-	<script src="intersection.js"></script>
-	<script src="main.js"></script>
+	<script src="js/carousel.js"></script>
+	<script src="js/scroll.js"></script>
+	<script src="js/intersection.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>

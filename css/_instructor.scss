@@ -1,0 +1,173 @@
+// インストラクター紹介
+#instructor {
+    background-color: $sRed;
+    padding: 30px 0;
+
+    .content {
+        color: white;
+
+        &::after {
+            border-bottom: solid 2px white;
+        }
+    }
+
+    .instructor-box {
+        overflow: hidden;
+        .instructor-left,
+        .instructor-right {
+            opacity: 0;
+            margin-bottom: 60px;
+        }
+
+        .instructor-items {
+            .instructor-left {
+                position: relative;
+                transform: translateX(-300px);
+                transition: opacity 0.5s, transform 0.7s;
+                margin-left: auto;
+
+                .instructor-left--img {
+                    max-width: 450px;
+                    margin: 0 20px;
+                    border-radius: 50%;
+                }
+
+                .instructor-left--name {
+                    display: block;
+                    width: 50%;
+                    font-size: 30px;
+                    background-color: white;
+                    color: $sRed;
+                    padding-right: 20px;
+                    border-radius: 0 10px 10px 0;
+                    text-align: end;
+                }
+                .instructor-left--texts {
+                    .instructor-left--parts {
+                        font-size: 20px;
+                        margin: 0 20px 20px 0;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .instructor-right {
+            transform: translateX(300px);
+            position: relative;
+            transition: opacity 0.5s, transform 0.7s;
+            margin-right: auto;
+
+            .instructor-right--box {
+                margin-left: auto;
+                text-align: start;
+                background-color: white;
+                border-radius: 10px 0 0 10px;
+                padding-right: 20px;
+                color: $sRed;
+                width: 50%;
+                .instructor-right--name {
+                    font-size: 30px;
+                    text-align: start;
+                    padding-left: 20px;
+                }
+            }
+
+            .flex {
+                justify-content: flex-end;
+            }
+            .instructor-right--texts {
+                .instructor-right--parts {
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    color: white;
+
+                    .instructor-right--list {
+                        text-align: start;
+                    }
+                }
+            }
+
+            .instructor-right--img {
+                max-width: 450px;
+                margin: 0 20px;
+                border-radius: 50%;
+            }
+        }
+
+        // appearクラスが付与されたらそれぞれ左・右からフェードインする
+        .instructor-items.appear {
+            .instructor-left {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            .instructor-right {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+// メディアクエリ
+@media screen and (max-width: 800px) {
+    #instructor {
+        margin-bottom: 60px;
+        .instructor-box {
+            .instructor-items {
+                .flex {
+                    flex-direction: column;
+                }
+
+                .instructor-left {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $sRed;
+                    color: white;
+
+                    .instructor-left--img {
+                        max-width: 400px;
+                        margin: 0 auto;
+                    }
+
+                    .instructor-left--texts {
+                        padding: 20px;
+                        margin: 0 auto;
+                        .instructor-left--parts {
+                            margin: 20px;
+                        }
+                    }
+                }
+
+                .instructor-right {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $sRed;
+                    color: white;
+
+                    .instructor-right--box {
+                        .instructor-right--name {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .instructor-right--img {
+                        order: 1;
+                        max-width: 400px;
+                        margin: 20px auto;
+                    }
+
+                    .instructor-right--texts {
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin: 0 auto;
+                        .instructor-right--parts {
+                            margin: 20px;
+                            order: 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

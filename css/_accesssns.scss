@@ -1,0 +1,116 @@
+// アクセスとSNS
+#accesssns {
+    margin: 0 10px 50px;
+
+    // マップ部分
+    .access {
+        justify-content: space-around;
+        margin-bottom: 100px;
+
+        .access-map {
+            iframe {
+                max-width: 100%;
+                object-fit: contain;
+                margin: 0 auto;
+            }
+        }
+
+        .access-texts {
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+            display: inline-block;
+            margin: 0 10px;
+            background-color: $sRed;
+            color: white;
+            padding: 10px 10px;
+            margin-bottom: 30px;
+
+            // ピン（本体）
+            &::before {
+                content: "";
+                position: absolute;
+                top: -28px;
+                left: 48%;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: rgb(252, 128, 128);
+                box-shadow: -3px -3px 3px 0 $sRed inset;
+                display: inline-block;
+                z-index: 10;
+            }
+
+            // ピン（針）
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                width: 3px;
+                height: 13px;
+                background-color: rgba(0, 0, 0, 0.226);
+                transform: rotate(30deg);
+                box-shadow: 0 3.5px 1px 0 black;
+            }
+        }
+
+        .access-title {
+            padding: 10px 0;
+        }
+    }
+
+    // SNS部分
+    .sns {
+        max-width: 1000px;
+        margin: 0 auto 100px;
+        .sns-contents {
+            .sns-box {
+                margin-bottom: 50px;
+                iframe {
+                    width: 100%;
+                }
+                .sns-title {
+                    background: $sRed;
+                    color: white;
+                    display: inline-block;
+                    border-radius: 20px;
+                    padding: 5px 20px;
+                    margin: 0 0 10px 10px;
+                }
+            }
+        }
+    }
+
+    // メディアクエリ
+    @media screen and (max-width: 1100px) {
+        .sns {
+            .sns-box {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .access {
+            flex-direction: column-reverse;
+
+            .access-map {
+                margin: 0 auto;
+            }
+
+            .access-texts {
+                margin: 0 auto 50px;
+                .access-title {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .sns {
+            .sns-box {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

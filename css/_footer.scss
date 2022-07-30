@@ -1,12 +1,13 @@
 // フッター
-footer {
+#footer {
     background-color: $sRed;
-    padding: 20px 30px;
+    padding: 20px 30px 0;
 
-    .footer--total {
-        font-size: 15px;
-        .footer-menu {
-            margin-bottom: 5px;
+    .footer-box {
+        font-size: 18px;
+        padding: 20px 0;
+        .footer-list {
+            margin-bottom: 10px;
 
             &:hover {
                 opacity: 0.8;

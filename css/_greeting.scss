@@ -1,0 +1,77 @@
+// 挨拶
+#greeting {
+    .greeting-box {
+        max-width: 1000px;
+        margin: 10px auto 0;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 1s;
+        &.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .flex {
+            align-items: center;
+        }
+
+        .greeting-items {
+            margin: 20px;
+        }
+
+        .greeting-title {
+            color: $sRed;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .greeting-text--box {
+            padding: 20px;
+            background: #fff;
+            border-top: 5px double $sRed;
+            border-bottom: 5px double $sRed;
+            height: fit-content;
+
+            .greeting-text {
+                margin: 20px;
+                font-size: 18px;
+                line-height: 35px;
+            }
+        }
+
+        .greeting-img2 {
+            display: none;
+        }
+    }
+
+    // メディアクエリ
+    @media screen and (max-width: 800px) {
+        .greeting-box {
+            .greeting-img {
+                display: none;
+            }
+
+            .greeting-img--parts {
+                float: right;
+            }
+
+            .greeting-img2 {
+                display: initial;
+                max-width: 100%;
+            }
+
+            .greeting-text--box {
+                .greeting-text {
+                    font-size: 17px;
+					line-height: 30px;
+					margin: 10px;
+                }
+            }
+
+            .greeting-sp--display {
+                display: flex;
+            }
+        }
+    }
+}

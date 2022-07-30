@@ -1,19 +1,24 @@
 // 共通
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
-    height: 100%;
+    position: relative;
 }
 
 body {
     width: 100%;
     height: auto;
-    margin: 0;
-    padding: 0;
-    font-family: "Zen Old Mincho", serif;
+    font-size: 16px;
+    font-family: "M PLUS 1 Code", sans-serif;
     background: linear-gradient(-45deg, #fb463d42, #fb8c3d4d, #fdac1546);
     background-size: 2000% 2000%;
     animation: gradation 10s ease infinite alternate;
 }
 
+// 背景
 @keyframes gradation {
     0% {
         background-position: 0% 50%;
@@ -24,21 +29,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-.contents {
-    display: flex;
-    justify-content: space-between;
-}
-
-article {
-    width: 50%;
-    border-right: 3px dotted $sRed;
-}
-
-aside {
-    width: 50%;
-    z-index: 10;
 }
 
 ul {
@@ -61,10 +51,23 @@ a:hover {
     display: flex;
 }
 
-// 共通（タイトル）
+// レイアウト（共通）
+.content {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    margin: 0 100px 50px;
+}
+
+// タイトル部分（共通）
+main {
+    margin-bottom: 100px;
+}
+
 section {
     margin-bottom: 100px;
-    // overflow: hidden;
 
     .content {
         position: relative;
@@ -90,12 +93,13 @@ section {
                 margin: 0 10px;
             }
 
-            .info--en {
+            .info-en {
                 font-family: "Lobster", cursive;
-                font-size: 38px;
+                font-size: 33px;
+                margin-bottom: 0;
             }
         }
-        .info--menu {
+        .info-menu {
             position: absolute;
             left: 45px;
         }
@@ -110,6 +114,7 @@ section {
     }
 }
 
+// タイトル部分をふわっと表示するアニメーション
 @keyframes open-title {
     from {
         opacity: 0;
@@ -121,11 +126,27 @@ section {
     }
 }
 
+// タイトルに下線を引くアニメーション
 @keyframes border_anim {
     0% {
         width: 0%;
     }
     100% {
         width: 100%;
+    }
+}
+
+// メディアクエリ
+@media screen and (max-width: 600px) {
+    main {
+        margin-bottom: 100px;
+    }
+
+    section {
+        margin-bottom: 50px;
+    }
+
+    .wrapper {
+        margin: 0 20px 50px;
     }
 }

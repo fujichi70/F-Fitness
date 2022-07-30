@@ -1,0 +1,241 @@
+// メイン（カルーセル）
+#main {
+    height: 100vh;
+}
+
+#carousel {
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+
+    .carousel-main {
+        margin-bottom: 20px;
+        position: relative;
+        .active {
+            animation: fadeImg 1.2s;
+        }
+    }
+
+    // 画像切り替え時ふわっと表示
+    @keyframes fadeImg {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .carousel-img {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .carousel-parts {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 15%;
+        left: 2%;
+
+        .carousel-thumbnails {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            z-index: 3;
+
+            li {
+                cursor: pointer;
+                opacity: 0.4;
+                margin-right: 20px;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            img {
+                width: 80px;
+            }
+
+            .current {
+                opacity: 1;
+            }
+        }
+
+        .carousel-prev {
+            cursor: pointer;
+            color: $sRed;
+            z-index: 10;
+            margin-right: 30px;
+            &:hover {
+                transition-duration: 0.2s;
+                transform: translateX(-10px);
+            }
+        }
+
+        .carousel-next {
+            cursor: pointer;
+            color: $sRed;
+            margin-left: 10px;
+            &:hover {
+                transition-duration: 0.2s;
+                transform: translateX(10px);
+            }
+        }
+    }
+
+    .new-me {
+        position: absolute;
+        bottom: 15%;
+        right: 3%;
+        color: white;
+        font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+        font-size: 6rem;
+        white-space: nowrap;
+
+        span {
+            display: inline-block;
+            transition: all 1s;
+            opacity: 0;
+            transform: translateY(-30%);
+        }
+        .move {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .carousel-text {
+        width: 600px;
+        height: 290px;
+        line-height: 30px;
+        padding: 10px 20px;
+        position: absolute;
+        top: 25%;
+        left: 2%;
+        background-color: rgba(255, 0, 0, 0.493);
+        color: white;
+
+        .main-message {
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .sub-message {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .detail-message {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+// メディアクエリ
+@media screen and (max-width: 800px) {
+    #main {
+        height: 80vh;
+    }
+    #carousel {
+        margin-bottom: 20px;
+
+        .carousel-img {
+            object-fit: contain;
+        }
+        .carousel-parts {
+            margin-top: 20px;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .carousel-text {
+            left: 50%;
+            top: 51%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 310px;
+
+            .main-message {
+                font-size: 24px;
+            }
+            .sub-message {
+                font-size: 18px;
+            }
+            .detail-message {
+                font-size: 15px;
+            }
+        }
+
+        .new-me {
+            font-size: 70px;
+            position: absolute;
+            top: 22%;
+            left: 3%;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    #main {
+    }
+    #carousel {
+        margin-bottom: 20px;
+
+        .carousel-img {
+            object-fit: contain;
+        }
+        .carousel-parts {
+            margin-top: 20px;
+            position: absolute;
+            left: 50%;
+            bottom: 3%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .carousel-text {
+            left: 50%;
+            top: 60%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 320px;
+
+            .main-message {
+                font-size: 20px;
+            }
+            .sub-message {
+                font-size: 18px;
+            }
+            .detail-message {
+                font-size: 15px;
+            }
+        }
+
+        .new-me {
+            font-size: 70px;
+            position: absolute;
+            top: 22%;
+            left: 3%;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #carousel {
+        .carousel-parts {
+            display: none;
+        }
+        .carousel-text {
+            top: 54%;
+        }
+    }
+}

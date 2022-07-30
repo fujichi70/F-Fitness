@@ -1,0 +1,309 @@
+// 料金・体験（横並び）
+#fee {
+    .fee-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    article {
+        width: 50%;
+        border-right: 3px dotted $sRed;
+        padding: 10px;
+    }
+
+    aside {
+        width: 50%;
+        padding: 10px;
+        z-index: 10;
+    }
+
+    // article部分
+    .fee-table {
+        max-width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0 auto 50px;
+
+        .month {
+            padding: 10px;
+            color: white;
+            border: solid 1px $sRed;
+            background: $sRed;
+
+            span {
+                font-size: 20px;
+            }
+
+            &:nth-child(1) {
+                background: rgba(250, 200, 200, 0.356);
+            }
+
+            &:nth-child(2) {
+                border-right: 1px solid #fff;
+            }
+        }
+
+        .fee-items {
+            font-size: 18px;
+            padding: 10px;
+            width: 220px;
+
+            &:nth-of-type(1) {
+                background: $sPink;
+                color: white;
+                border: $sRed 1px solid;
+                border-bottom: $sRed 1px solid;
+                width: 28%;
+            }
+            &:nth-of-type(2) {
+                border-bottom: $sRed 1px solid;
+                border-right: $sRed 1px solid;
+            }
+            &:nth-of-type(3) {
+                border-bottom: $sRed 1px solid;
+                border-right: $sRed 1px solid;
+            }
+        }
+
+        .fee-text {
+            text-align: left;
+        }
+    }
+
+    .experience {
+        margin: 0 10px 40px;
+
+        .experience-parts {
+            margin: 0 0 30px;
+
+            .experience-title {
+                font-family: "Rampart One", cursive;
+                font-size: 40px;
+                text-align: center;
+                color: $sRed;
+                animation: blink 2s ease-in-out infinite alternate;
+                margin-bottom: 20px;
+            }
+
+            @keyframes blink {
+                0% {
+                    opacity: 0;
+                }
+                50%,
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .experience-word {
+                text-align: center;
+                font-size: 20px;
+                line-height: 22px;
+            }
+
+            .experience-info {
+                position: relative;
+                visibility: visible;
+                max-width: 645px;
+                margin: auto;
+                height: 430px;
+                cursor: pointer;
+
+                // 画像に影を付ける
+                &::before {
+                    content: "";
+                    z-index: 2;
+                    background-color: rgba(0, 0, 0, 0.637);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 430px;
+                    display: block;
+                }
+
+                // ホバーしたら画像と文字を変える
+                &:hover {
+                    &::before {
+                        display: none;
+                    }
+                    .experience-text1 {
+                        animation: chars-appear 0.5s forwards;
+                    }
+
+                    @keyframes chars-appear {
+                        0% {
+                            transform: translate(-50%, -50%) scale(1);
+                        }
+                        100% {
+                            transform: translate(-50%, -50%) scale(1.1);
+                        }
+                    }
+
+                    .img-box:nth-child(2) {
+                        display: none;
+                    }
+
+                    .img-box .experience-text1 {
+                        opacity: 1;
+                    }
+                }
+
+                .img-box {
+                    .experience-text1 {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: white;
+                        z-index: 2;
+                        opacity: 0;
+                        text-align: center;
+                    }
+
+                    .experience-text2 {
+                        color: white;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 2;
+                        text-align: center;
+                    }
+
+                    .experience-img {
+                        max-width: 100%;
+                        height: 430px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .experience-message {
+            font-size: 20px;
+            text-align: center;
+            line-height: 22px;
+        }
+
+        .experience-btn {
+            display: flex;
+            margin: 50px 0;
+            a {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    // aside部分
+    .fee-campaign--box {
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .fee-campaign--img {
+            max-width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    // メディアクエリ
+    @media screen and (max-width: 1420px) {
+        .experience {
+            .experience-text1,
+            .experience-text2 {
+                font-size: 35px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1300px) {
+        .experience {
+            .experience-text1,
+            .experience-text2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .experience {
+            .experience-text1,
+            .experience-text2 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        .fee-content {
+            flex-direction: column;
+        }
+
+        article {
+            border-right: none;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fee-table {
+            margin: 0 auto;
+        }
+
+        .fee-campaign--box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .fee-campaign--img {
+                width: 50%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .fee-table {
+            width: 95%;
+        }
+
+        .experience {
+            margin: 50px 0;
+            .experience-text1,
+            .experience-text2 {
+                font-size: 34px;
+            }
+        }
+
+        .fee-campaign--box {
+            margin: 0 20px;
+            flex-direction: column;
+
+            .fee-campaign--img {
+                width: 100%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        .fee-box {
+            .fee-table {
+                .fee-items {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
